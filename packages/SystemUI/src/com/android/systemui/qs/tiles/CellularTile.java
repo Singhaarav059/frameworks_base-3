@@ -76,6 +76,7 @@ public class CellularTile extends QSTileImpl<SignalState> {
         super(host);
         mController = networkController;
         mActivityStarter = activityStarter;
+        mUnlockMethodCache = UnlockMethodCache.getInstance(mHost.getContext());
         mDataController = mController.getMobileDataController();
         mDetailAdapter = new CellularDetailAdapter();
         mKeyguard = Dependency.get(KeyguardMonitor.class);
@@ -160,6 +161,9 @@ public class CellularTile extends QSTileImpl<SignalState> {
 
     @Override
     protected void handleSecondaryClick() {
+        if (getState().state == Tile.STATE_UNAVAILABLE) {
+            return;
+        }
         if (mDataController.isMobileDataSupported()) {
             showDetail(true);
         } else {
