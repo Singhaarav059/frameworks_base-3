@@ -41,6 +41,10 @@ import java.text.DecimalFormat;
  */
 public class DataUsageDetailView extends LinearLayout {
 
+    private static final double KB = 1000;
+    private static final double MB = 1000 * KB;
+    private static final double GB = 1000 * MB;
+
     private final DecimalFormat FORMAT = new DecimalFormat("#.##");
 
     public DataUsageDetailView(Context context, AttributeSet attrs) {
