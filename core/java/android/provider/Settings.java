@@ -4767,6 +4767,26 @@ public final class Settings {
          */
         public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
 
+	/**
+         * whether to enable or disable battery bar on lock screen
+         *
+         * @hide
+         */
+        public static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
+        /** @hide */
+        private static final Validator SYSUI_KEYGUARD_SHOW_BATTERY_BAR_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * whether to always show battery bar on lock screen
+         *
+         * @hide
+         */
+        public static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS = "sysui_keyguard_show_battery_bar_always";
+        /** @hide */
+        private static final Validator SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
         /**
          * Whether to show the brightness slider in quick settings panel.
          * 0 = Never, 1 = show when expanded, 2 = show always
@@ -6810,7 +6830,9 @@ public final class Settings {
             THEMING_SETTINGS_DASHBOARD_ICONS,
             FOD_ICON,
             FOD_PRESSED_STATE,
-            FOD_RECOGNIZING_ANIMATION
+            FOD_RECOGNIZING_ANIMATION,
+	    SYSUI_KEYGUARD_SHOW_BATTERY_BAR,
+            SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS
         };
 
         /**
@@ -7302,6 +7324,8 @@ public final class Settings {
             VALIDATORS.put(FOD_RECOGNIZING_ANIMATION, FOD_RECOGNIZING_ANIMATION_VALIDATOR);
             VALIDATORS.put(QS_SHOW_AUTO_BRIGHTNESS, QS_SHOW_AUTO_BRIGHTNESS_VALIDATOR);
             VALIDATORS.put(QS_SHOW_BRIGHTNESS_SLIDER, QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR);
+	    VALIDATORS.put(SYSUI_KEYGUARD_SHOW_BATTERY_BAR, SYSUI_KEYGUARD_SHOW_BATTERY_BAR_VALIDATOR);
+            VALIDATORS.put(SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS, SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS_VALIDATOR);
         }
 
         /**
