@@ -137,4 +137,6 @@
     <!--Add custom margin -->
     <dimen name="ancient_custom_minheight">24dp</dimen>
 
+    <dimen name="battery_bar_view_height">6dp</dimen>
+
 </resources>
